@@ -19,5 +19,5 @@ MainWindow::~MainWindow()
 void MainWindow::btnClicked()
 {
     counter++;
-    ui->label->setText(QString::number(counter));
+    ui->label->setText(QString::number(counter) + " times");
 }
