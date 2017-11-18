@@ -2,11 +2,17 @@
 #define MAINWINDOW_H
 
 #include <QMainWindow>
-#include "testclass.h"
+#include <QStackedWidget>
+#include "settings.h"
+#include "dialogwindow.h"
+#include "gamemap.h"
+#include "mainmenu.h"
+
 
 namespace Ui {
 class MainWindow;
 }
+
 
 class MainWindow : public QMainWindow
 {
@@ -18,15 +24,14 @@ public:
 
 private:
     Ui::MainWindow *ui;
-    TestClass *obj;
-    int counter = 0;
-
-
+    GraphicStates currentState = GraphicStates::MAIN_MENU;
+    DialogWindow *dialogWindow;
+    GameMap *gameMap;
+    MainMenu *mainMenu;
+    QStackedWidget *windowHandler;
 public slots:
-    void btnClicked();
+    void stateChangedSlot(GraphicStates newState);
 
-signals:
-    void signalFoo();
 };
 
 #endif // MAINWINDOW_H

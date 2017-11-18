@@ -26,11 +26,20 @@ DEFINES += QT_DEPRECATED_WARNINGS
 SOURCES += \
         main.cpp \
         mainwindow.cpp \
-    testclass.cpp
+    mainmenu.cpp \
+    gamemap.cpp \
+    dialogwindow.cpp \
+    settings.cpp
 
 HEADERS += \
         mainwindow.h \
-    testclass.h
+    mainmenu.h \
+    gamemap.h \
+    dialogwindow.h \
+    settings.h
 
 FORMS += \
-        mainwindow.ui
+        mainwindow.ui \
+    mainmenu.ui \
+    gamemap.ui \
+    dialogwindow.ui
