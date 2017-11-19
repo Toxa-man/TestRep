@@ -29,17 +29,20 @@ SOURCES += \
     mainmenu.cpp \
     gamemap.cpp \
     dialogwindow.cpp \
-    settings.cpp
+    settings.cpp \
+    exitdialog.cpp
 
 HEADERS += \
         mainwindow.h \
     mainmenu.h \
     gamemap.h \
     dialogwindow.h \
-    settings.h
+    settings.h \
+    exitdialog.h
 
 FORMS += \
         mainwindow.ui \
     mainmenu.ui \
     gamemap.ui \
-    dialogwindow.ui
+    dialogwindow.ui \
+    exitdialog.ui

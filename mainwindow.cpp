@@ -15,10 +15,15 @@ MainWindow::MainWindow(QWidget *parent) :
     windowHandler->addWidget(gameMap);
     windowHandler->addWidget(dialogWindow);
     this->setCentralWidget(windowHandler);
+    exitDialog = new ExitDialog(this);
     connect(dialogWindow, &DialogWindow::stateChanged, this, &MainWindow::stateChangedSlot);
     connect(gameMap, &GameMap::stateChanged, this, &MainWindow::stateChangedSlot);
     connect(mainMenu, &MainMenu::stateChanged, this, &MainWindow::stateChangedSlot);
-    connect(mainMenu, &MainMenu::closeApp, this, &MainWindow::close);
+    connect(mainMenu, &MainMenu::closeApp, [=](){
+    if (exitDialog->exec() == QDialog::Accepted){
+        this->close();
+    }
+    });
 
 }
 

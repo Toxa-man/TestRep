@@ -7,6 +7,7 @@
 #include "dialogwindow.h"
 #include "gamemap.h"
 #include "mainmenu.h"
+#include "exitdialog.h"
 
 
 namespace Ui {
@@ -28,6 +29,7 @@ private:
     DialogWindow *dialogWindow;
     GameMap *gameMap;
     MainMenu *mainMenu;
+    ExitDialog *exitDialog;
     QStackedWidget *windowHandler;
 public slots:
     void stateChangedSlot(GraphicStates newState);
