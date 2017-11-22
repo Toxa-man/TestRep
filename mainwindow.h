@@ -3,11 +3,13 @@
 
 #include <QMainWindow>
 #include <QStackedWidget>
+#include <QCloseEvent>
 #include "settings.h"
 #include "dialogwindow.h"
 #include "gamemap.h"
 #include "mainmenu.h"
 #include "exitdialog.h"
+#include "player.h"
 
 
 namespace Ui {
@@ -31,6 +33,8 @@ private:
     MainMenu *mainMenu;
     ExitDialog *exitDialog;
     QStackedWidget *windowHandler;
+    Player *mainCharacter;
+    void closeEvent(QCloseEvent *event);
 public slots:
     void stateChangedSlot(GraphicStates newState);
 

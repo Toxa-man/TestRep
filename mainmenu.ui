@@ -122,6 +122,32 @@
     </item>
    </layout>
   </widget>
+  <widget class="QPushButton" name="incHPBtn">
+   <property name="geometry">
+    <rect>
+     <x>50</x>
+     <y>180</y>
+     <width>91</width>
+     <height>23</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>Increase HP</string>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="incArmorBtn">
+   <property name="geometry">
+    <rect>
+     <x>50</x>
+     <y>220</y>
+     <width>91</width>
+     <height>23</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>Increase armor</string>
+   </property>
+  </widget>
  </widget>
  <resources/>
  <connections/>

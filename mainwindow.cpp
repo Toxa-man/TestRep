@@ -6,10 +6,11 @@ MainWindow::MainWindow(QWidget *parent) :
     ui(new Ui::MainWindow)
 {
     ui->setupUi(this);
+    mainCharacter = new Player(100, 20);
 
-    dialogWindow = new DialogWindow(this);
+    dialogWindow = new DialogWindow(this, mainCharacter);
     gameMap = new GameMap(this);
-    mainMenu = new MainMenu(this);
+    mainMenu = new MainMenu(this, mainCharacter);
     windowHandler = new QStackedWidget(this);
     windowHandler->addWidget(mainMenu);
     windowHandler->addWidget(gameMap);
@@ -19,17 +20,22 @@ MainWindow::MainWindow(QWidget *parent) :
     connect(dialogWindow, &DialogWindow::stateChanged, this, &MainWindow::stateChangedSlot);
     connect(gameMap, &GameMap::stateChanged, this, &MainWindow::stateChangedSlot);
     connect(mainMenu, &MainMenu::stateChanged, this, &MainWindow::stateChangedSlot);
-    connect(mainMenu, &MainMenu::closeApp, [=](){
-    if (exitDialog->exec() == QDialog::Accepted){
-        this->close();
-    }
-    });
-
+    connect(mainMenu, &MainMenu::closeApp, this, &MainWindow::close);
 }
 
 MainWindow::~MainWindow()
 {
     delete ui;
+}
+
+void MainWindow::closeEvent(QCloseEvent *event)
+{
+    if (exitDialog->exec() == QDialog::Accepted){
+        event->accept();
+    } else {
+        event->ignore();
+    }
+
 }
 
 void MainWindow::stateChangedSlot(GraphicStates newState)

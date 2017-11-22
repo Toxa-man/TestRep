@@ -30,7 +30,8 @@ SOURCES += \
     gamemap.cpp \
     dialogwindow.cpp \
     settings.cpp \
-    exitdialog.cpp
+    exitdialog.cpp \
+    player.cpp
 
 HEADERS += \
         mainwindow.h \
@@ -38,7 +39,8 @@ HEADERS += \
     gamemap.h \
     dialogwindow.h \
     settings.h \
-    exitdialog.h
+    exitdialog.h \
+    player.h
 
 FORMS += \
         mainwindow.ui \
